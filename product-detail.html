@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Wholesale Product Detail | Texium Luxury Wholesale</title>
+    <meta
+      name="description"
+      content="Wholesale product detail view for Texium Luxury Wholesale. Explore fabric, sizes, MOQ and specifications designed for bulk apparel sourcing."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="product-detail-page">
+    <!-- Grid background -->
+    <div class="page-grid-bg" aria-hidden="true"></div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="logo">
+          <div class="logo-mark">T</div>
+          <div class="logo-text">
+            <span>Texium</span>
+            <span>Luxury Wholesale</span>
+          </div>
+        </a>
+
+        <nav class="main-nav" aria-label="Primary navigation">
+          <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-links">
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#clients">Our Clients</a></li>
+            <li><a href="index.html#enquiry">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main id="productDetailPage">
+      <!-- ===== Hero / Header ===== -->
+      <section class="section product-detail-hero">
+        <div class="container">
+
+          <!-- Top row: back + prev/next -->
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 16px;
+              flex-wrap: wrap;
+            "
+          >
+            <!-- Back to collection -->
+            <a
+              href="collections.html"
+              class="text-link"
+              id="backToCollection"
+            >
+              ← Back to catalogue
+            </a>
+
+            <!-- 🔁 Previous / Next PRODUCT (TOP RIGHT) -->
+            <nav
+              class="pager pager--top"
+              aria-label="Product navigation"
+            >
+              <a
+                href="#"
+                id="prevProductLink"
+                class="pager-link pager-link--prev pager-link--disabled"
+                aria-label="Previous product"
+              ></a>
+
+              <a
+                href="#"
+                id="nextProductLink"
+                class="pager-link pager-link--next pager-link--disabled"
+                aria-label="Next product"
+              ></a>
+            </nav>
+          </div>
+
+          <!-- Breadcrumb + Title -->
+          <p class="eyebrow" id="pdBreadcrumb">
+            Wholesale Product
+          </p>
+          <h1 id="pdName">
+            Wholesale Product Detail
+          </h1>
+        </div>
+      </section>
+
+      <!-- ===== Product Detail Card ===== -->
+      <section class="section product-detail-page-section">
+        <div class="container product-detail-page-inner card">
+          <!-- Image -->
+          <div class="product-detail-page-media">
+            <img
+              id="pdImage"
+              src=""
+              alt=""
+              class="product-detail-page-image"
+            />
+          </div>
+
+          <!-- Content -->
+          <div class="product-detail-page-content">
+            <p
+              id="pdDescription"
+              class="product-detail-page-description"
+            >
+              Detailed wholesale product information will appear here.
+            </p>
+
+            <dl class="detail-meta">
+              <div>
+                <dt>Fabric</dt>
+                <dd id="pdFabric">–</dd>
+              </div>
+              <div>
+                <dt>Available sizes</dt>
+                <dd id="pdSizes">–</dd>
+              </div>
+              <div>
+                <dt>MOQ</dt>
+                <dd id="pdMOQ">–</dd>
+              </div>
+            </dl>
+
+            <a
+              href="#"
+              class="btn primary"
+              id="whatsappEnquiry"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Enquire on WhatsApp
+            </a>
+
+            <p class="product-detail-note">
+              This is a wholesale-only enquiry flow. Pricing and catalogues are
+              shared after we receive your business details and target volumes.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html#hero" class="logo">
+            <div class="logo-mark">T</div>
+            <div class="logo-text">
+              <span>Texium</span>
+              <span>Luxury Wholesale</span>
+            </div>
+          </a>
+          <p>
+            Luxury-driven wholesale apparel across womenswear, kidswear,
+            loungewear, uniforms and medical textiles.
+          </p>
+        </div>
+
+        <div class="footer-columns">
+          <div>
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html#hero">Home</a></li>
+              <li><a href="collections.html">Collections</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#clients">Our Clients</a></li>
+              <li><a href="index.html#enquiry">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Wholesale Only</h4>
+            <ul>
+              <li>MOQ from 30–60 pcs / style</li>
+              <li>Support for private label</li>
+              <li>Domestic &amp; export shipments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>
+          © <span id="year"></span> Texium Luxury Wholesale. All rights reserved.
+        </span>
+        <span>
+          Built for boutiques, retailers, and distributors.
+        </span>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+  </body>
+</html>

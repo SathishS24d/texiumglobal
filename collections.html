@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wholesale Collections | Texium Luxury Wholesale</title>
+    <meta
+      name="description"
+      content="Structured wholesale apparel collections for women’s wear, loungewear, kids wear, men’s wear, uniforms, and hospital uniforms—designed for bulk sourcing and retail planning."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="collections-page">
+    <div class="page-grid-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="logo">
+          <div class="logo-mark">T</div>
+          <div class="logo-text">
+            <span>Texium</span>
+            <span>Luxury Wholesale</span>
+          </div>
+        </a>
+        <nav class="main-nav" aria-label="Primary navigation">
+          <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-links">
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="index.html#collection-listing">Products</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#clients">Our Clients</a></li>
+            <li><a href="index.html#enquiry">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Page Hero -->
+      <section class="section collections-hero">
+        <div class="container collections-hero-inner">
+          <div class="collections-hero-copy" data-animate>
+            <p class="eyebrow">Wholesale Catalogue</p>
+            <h1>Wholesale Collections</h1>
+            <p class="collections-hero-subtitle">
+              Structured apparel categories designed for wholesale and bulk sourcing—
+              giving buying teams a clear view of Texium’s core offering across women’s wear,
+              loungewear, kids wear, menswear, uniforms, and hospital uniforms.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Collections Grid -->
+      <section
+        class="section section-soft"
+        id="collectionsGridSection"
+        aria-labelledby="collectionsGridHeading"
+      >
+        <div class="container">
+          <header class="section-header" data-animate>
+            <h2 id="collectionsGridHeading">Main Wholesale Collections</h2>
+            <p>
+              Explore our primary wholesale collections. Select a collection to see its detailed
+              sub‑categories before moving into product‑level planning.
+            </p>
+          </header>
+          <div
+            class="grid collections-grid collections-grid--page"
+            id="collectionsGrid"
+            aria-live="polite"
+          >
+            <!-- Cards injected by collections.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Subcategory View -->
+      <section
+        class="section collections-detail is-hidden"
+        id="collectionDetailSection"
+        aria-labelledby="collectionDetailHeading"
+      >
+        <div class="container">
+          <header class="collections-detail-header" data-animate>
+            <a href="#collectionsGridSection" class="text-link" id="backToCollectionsPage">
+              ← Back to collections
+            </a>
+            <p class="eyebrow" id="detailEyebrow">Collection</p>
+            <h2 id="collectionDetailHeading">Selected collection</h2>
+            <p class="collections-detail-subtitle" id="collectionDetailDescription">
+              Choose a collection from the catalogue above to see its structured wholesale categories.
+            </p>
+          </header>
+
+          <section
+            class="collections-detail-grid"
+            aria-label="Sub-categories within this collection"
+          >
+            <!-- Category cards injected by collections.js -->
+            <div id="collectionCategories" aria-live="polite"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html#hero" class="logo">
+            <div class="logo-mark">T</div>
+            <div class="logo-text">
+              <span>Texium</span>
+              <span>Luxury Wholesale</span>
+            </div>
+          </a>
+          <p>
+            Luxury‑driven wholesale apparel across womenswear, kidswear, loungewear, uniforms, and
+            medical textiles—catalogue‑led and built for long‑term partnerships.
+          </p>
+        </div>
+        <div class="footer-columns">
+          <div>
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html#hero">Home</a></li>
+              <li><a href="collections.html">Collections</a></li>
+              <li><a href="index.html#collection-listing">Products</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#clients">Our Clients</a></li>
+              <li><a href="index.html#enquiry">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Wholesale Only</h4>
+            <ul>
+              <li>MOQ from 30–60 pcs / style</li>
+              <li>Support for private label</li>
+              <li>Domestic &amp; export shipments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> Texium Luxury Wholesale. All rights reserved.</span>
+        <span>Built for boutiques, retailers, and distributors.</span>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+  </html>
+
+
