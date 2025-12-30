@@ -731,6 +731,7 @@ if (enquiryForm) {
     e.preventDefault();
 
     let valid = true;
+
     enquiryForm
       .querySelectorAll("[required]")
       .forEach((field) => field.classList.remove("form-error"));
@@ -738,9 +739,18 @@ if (enquiryForm) {
     enquiryForm.querySelectorAll("[required]").forEach((field) => {
       if (!(field instanceof HTMLInputElement || field instanceof HTMLSelectElement))
         return;
-      if (!field.value.trim()) {
-        valid = false;
-        field.classList.add("form-error");
+
+      // 🔴 FIX: handle custom select properly
+      if (field.tagName === "SELECT") {
+        if (!field.value) {
+          valid = false;
+          field.classList.add("form-error");
+        }
+      } else {
+        if (!field.value.trim()) {
+          valid = false;
+          field.classList.add("form-error");
+        }
       }
     });
 
@@ -753,14 +763,58 @@ if (enquiryForm) {
       return;
     }
 
-    enquiryForm.reset();
+    // ✅ Collect values
+    const businessName = document.getElementById("businessName").value.trim();
+    const contactEmail = document.getElementById("contactEmail").value.trim();
+    const contactPhone = document.getElementById("contactPhone").value.trim();
+
+    const collectionSelect = document.getElementById("interestedCollection");
+    const interestedCollection =
+      collectionSelect.options[collectionSelect.selectedIndex].text;
+
+    const orderQuantity = document.getElementById("orderQuantity").value.trim();
+
+    const businessTypeSelect = document.getElementById("businessType");
+    const businessType =
+      businessTypeSelect.options[businessTypeSelect.selectedIndex].text;
+
+    const notes = document.getElementById("notes").value.trim();
+
+    // ✅ WhatsApp redirect
+    const whatsappNumber = "919655502923"; // 🔴 YOUR NUMBER
+
+    const message = `
+New Wholesale Enquiry
+
+Business Name: ${businessName}
+Email: ${contactEmail}
+Phone / WhatsApp: ${contactPhone || "Not provided"}
+Interested Collection: ${interestedCollection}
+Expected Quantity: ${orderQuantity || "Not specified"}
+Business Type: ${businessType || "Not specified"}
+Notes: ${notes || "None"}
+    `;
+
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(message);
+
+    // ✅ Feedback
     if (formSuccess) {
-      formSuccess.textContent =
-        "Thank you. Our wholesale team will respond with catalogues and pricing within 1–2 business days.";
+      formSuccess.textContent = "Opening WhatsApp with your enquiry…";
       formSuccess.style.color = "#3c7a4e";
     }
+
+    // ✅ Redirect (user-initiated, popup safe)
+    window.location.href = whatsappURL;
+
+    // ✅ Reset AFTER redirect trigger
+    setTimeout(() => enquiryForm.reset(), 500);
   });
 }
+
 
 // Footer year
 const yearSpan = document.getElementById("year");
@@ -777,14 +831,14 @@ const catalog = {
   womens: {
     slug: "womens",
     title: "Women’s Wear",
-    image: "assets/img/collections/womens.jpg",
+    image: "images/kurti set.jpg",
     description:
       "Wholesale women’s wear including feeding kurtas, maternity dresses and coordinated sets, tailored for modern retail and bulk sourcing.",
     products: [
       {
         slug: "feeding-kurta",
         name: "Feeding Kurta",
-        image: "assets/img/products/feeding-kurta.jpg",
+        image: "images/kurti set.jpg",
         shortDesc: "Comfort-first feeding kurta for everyday maternity wear in retail and hospital settings.",
         description:
           "A soft, breathable feeding kurta engineered for pregnancy, nursing and postpartum comfort. Crafted in cotton / bamboo-rich fabrics, it is ideal for maternity boutiques, hospital gift shops and online retailers seeking reliable, repeatable wholesale maternity options.",
@@ -795,7 +849,7 @@ const catalog = {
       {
         slug: "maternity-dress",
         name: "Maternity Dress",
-        image: "assets/img/products/maternity-dress.jpg",
+        image: "images/feeding dress.webp",
         shortDesc:
           "Soft, breathable maternity dress for pregnancy and postpartum wardrobes.",
         description:
@@ -807,11 +861,11 @@ const catalog = {
       {
         slug: "Twinning Combo",
         name: "Twinning Combo",
-        image: "assets/img/products/maternity-dress.jpg",
+        image: "images/",
         shortDesc:
-          "Soft, breathable maternity dress for pregnancy and postpartum wardrobes.",
+          "Coordinated mother-son and mother-daughter outfits designed for everyday comfort and special moments.",
         description:
-          "A flowy maternity dress with gentle stretch and thoughtful patterning to accommodate the bump across trimesters. Designed for wholesale buyers looking for premium maternity silhouettes that photograph well and deliver repeat sales on the shop floor.",
+          "Coordinated mother-son and mother-daughter outfits designed for everyday comfort and special moments. Crafted in soft, breathable fabrics, these twinning sets are perfect for maternity boutiques, kidswear stores, and online retailers offering stylish, family-matching apparel.",
         fabric: "Bamboo Cotton",
         sizes: "S–XXL",
         moq: "50 pieces",
@@ -819,11 +873,11 @@ const catalog = {
       {
         slug: "Tunics",
         name: "Tunics",
-        image: "assets/img/products/maternity-dress.jpg",
+        image: "images/Tunic top.png",
         shortDesc:
-          "Soft, breathable maternity dress for pregnancy and postpartum wardrobes.",
+          "Versatile women’s tunic tops designed for all-day comfort and effortless styling.",
         description:
-          "A flowy maternity dress with gentle stretch and thoughtful patterning to accommodate the bump across trimesters. Designed for wholesale buyers looking for premium maternity silhouettes that photograph well and deliver repeat sales on the shop floor.",
+          "Versatile women’s tunic tops designed for all-day comfort and effortless styling. Made from soft, breathable fabrics, these tunics are ideal for fashion boutiques and online retailers seeking easy-to-sell, contemporary women’s wear.",
         fabric: "Bamboo Cotton",
         sizes: "S–XXL",
         moq: "50 pieces",
@@ -831,11 +885,11 @@ const catalog = {
       {
         slug: "Co-Ord Set",
         name: "Co-Ord Set",
-        image: "assets/img/products/maternity-dress.jpg",
+        image: "images/co ord set.jpg",
         shortDesc:
-          "Soft, breathable maternity dress for pregnancy and postpartum wardrobes.",
+          "Stylish coordinated sets designed for effortless, head-to-toe dressing.",
         description:
-          "A flowy maternity dress with gentle stretch and thoughtful patterning to accommodate the bump across trimesters. Designed for wholesale buyers looking for premium maternity silhouettes that photograph well and deliver repeat sales on the shop floor.",
+          "Stylish coordinated sets designed for effortless, head-to-toe dressing. Crafted from comfortable, breathable fabrics, these co-ord sets are ideal for fashion boutiques and online retailers seeking trend-driven, ready-to-wear women’s apparel.",
         fabric: "Bamboo Cotton",
         sizes: "S–XXL",
         moq: "50 pieces",
@@ -843,11 +897,11 @@ const catalog = {
       {
         slug: "Suit Set",
         name: "Suit Set",
-        image: "assets/img/products/maternity-dress.jpg",
+        image: "images/",
         shortDesc:
-          "Soft, breathable maternity dress for pregnancy and postpartum wardrobes.",
+          "Elegant women’s suit sets featuring coordinated kurta, bottoms, and dupatta for effortless ethnic styling.",
         description:
-          "A flowy maternity dress with gentle stretch and thoughtful patterning to accommodate the bump across trimesters. Designed for wholesale buyers looking for premium maternity silhouettes that photograph well and deliver repeat sales on the shop floor.",
+          "Elegant women’s suit sets featuring coordinated kurta, bottoms, and dupatta for effortless ethnic styling. Crafted in comfortable, breathable fabrics, these sets are ideal for fashion boutiques and online retailers seeking timeless, easy-to-sell ethnic wear.",
         fabric: "Bamboo Cotton",
         sizes: "S–XXL",
         moq: "50 pieces",
@@ -855,11 +909,11 @@ const catalog = {
       {
         slug: "Festive Wear",
         name: "Festive Wear",
-        image: "assets/img/products/maternity-dress.jpg",
+        image: "images/festive wear.jpg",
         shortDesc:
-          "Soft, breathable maternity dress for pregnancy and postpartum wardrobes.",
+          "Graceful festive outfits designed for celebrations, weddings, and special occasions. ",
         description:
-          "A flowy maternity dress with gentle stretch and thoughtful patterning to accommodate the bump across trimesters. Designed for wholesale buyers looking for premium maternity silhouettes that photograph well and deliver repeat sales on the shop floor.",
+          "Graceful festive outfits designed for celebrations, weddings, and special occasions. Crafted in rich yet comfortable fabrics, these styles are ideal for fashion boutiques and online retailers seeking elegant, occasion-ready ethnic wear.",
         fabric: "Bamboo Cotton",
         sizes: "S–XXL",
         moq: "50 pieces",
@@ -867,11 +921,11 @@ const catalog = {
       {
         slug: "Kaftan",
         name: "Kaftan",
-        image: "assets/img/products/maternity-dress.jpg",
+        image: "images/kaftan.jpg",
         shortDesc:
-          "Soft, breathable maternity dress for pregnancy and postpartum wardrobes.",
+          "Flowing kaftans designed for relaxed elegance and all-day comfort.",
         description:
-          "A flowy maternity dress with gentle stretch and thoughtful patterning to accommodate the bump across trimesters. Designed for wholesale buyers looking for premium maternity silhouettes that photograph well and deliver repeat sales on the shop floor.",
+          "Flowing kaftans designed for relaxed elegance and all-day comfort. Crafted from soft, breathable fabrics, these kaftans are ideal for fashion boutiques and online retailers seeking versatile, easy-fit women’s wear for casual and resort styling.",
         fabric: "Bamboo Cotton",
         sizes: "S–XXL",
         moq: "50 pieces",
@@ -881,14 +935,14 @@ const catalog = {
   lounge: {
     slug: "lounge",
     title: "Lounge Wear",
-    image: "assets/img/collections/lounge.jpg",
+    image: "images/Long t shirt.webp",
     description:
       "Loungewear built around softness, ease and all-day comfort for resort, home and maternity capsules.",
     products: [
       {
         slug: "pyjama-sets",
         name: "Pyjama Sets",
-        image: "assets/img/products/pyjama-sets.jpg",
+        image: "images/pyjama Set.webp",
         shortDesc:
           "Two-piece cotton pyjama sets designed for relaxed at-home and resort wear.",
         description:
@@ -900,7 +954,7 @@ const catalog = {
       {
         slug: "zipless-feeding-gown",
         name: "Zipless Feeding Gown",
-        image: "assets/img/products/zipless-feeding-gown.jpg",
+        image: "images/Zipless gown.jpg",
         shortDesc:
           "Zip-free feeding gown with concealed access for nursing comfort.",
         description:
@@ -912,11 +966,11 @@ const catalog = {
       {
         slug: "cloud-bump-leggings",
         name: "Cloud Bump Leggings",
-        image: "assets/img/products/pyjama-sets.jpg",
+        image: "images/bump legging.png",
         shortDesc:
-          "Two-piece cotton pyjama sets designed for relaxed at-home and resort wear.",
+          "Ultra-soft maternity leggings designed to gently support the baby bump through pregnancy and postpartum.",
         description:
-          "Lightweight cotton pyjama sets with relaxed fits and soft washes, created to sit in sleepwear, resort and gifting capsules. Ideal for retailers seeking consistent sizing, colour stories and long-run wholesale loungewear programs.",
+          "Ultra-soft maternity leggings designed to gently support the baby bump through pregnancy and postpartum. Crafted from stretchable, breathable fabrics for all-day comfort, ideal for maternity boutiques and online retailers seeking high-repeat, essential maternity wear.",
         fabric: "Woven Cotton",
         sizes: "S–XXL",
         moq: "60 sets",
@@ -924,11 +978,11 @@ const catalog = {
       {
         slug: "long-tshirt",
         name: "Long T-Shirt",
-        image: "assets/img/products/pyjama-sets.jpg",
+        image: "images/Long t shirt.webp",
         shortDesc:
-          "Two-piece cotton pyjama sets designed for relaxed at-home and resort wear.",
+          "Comfortable long-length T-shirts designed for easy everyday wear and relaxed layering.",
         description:
-          "Lightweight cotton pyjama sets with relaxed fits and soft washes, created to sit in sleepwear, resort and gifting capsules. Ideal for retailers seeking consistent sizing, colour stories and long-run wholesale loungewear programs.",
+          "Comfortable long-length T-shirts designed for easy everyday wear and relaxed layering. Made from soft, breathable fabrics, these styles are ideal for fashion boutiques and online retailers seeking versatile, easy-fit women’s casual wear.",
         fabric: "Woven Cotton",
         sizes: "S–XXL",
         moq: "60 sets",
@@ -938,14 +992,14 @@ const catalog = {
   kids: {
     slug: "kids",
     title: "Kids Wear",
-    image: "assets/img/collections/kids.jpg",
+    image: "images/kid dress.webp",
     description:
       "Newborn and kids wear with safety-first trims and soft fabrics for bulk baby and kids collections.",
     products: [
         {
           slug: "nappy",
           name: "Baby Nappy",
-          image: "assets/img/products/nappy.jpg",
+          image: "images/MUSLIN_NAPPY.webp",
           shortDesc:
             "Soft reusable nappies designed for newborn comfort.",
           description:
@@ -959,9 +1013,9 @@ const catalog = {
           name: "Swaddles",
           image: "assets/img/products/short-set.jpg",
           shortDesc:
-            "Two-piece short sets for everyday baby wear.",
+            "Soft, breathable baby swaddles designed to keep newborns cozy and secure.",
           description:
-            "Breathable short sets designed for comfort and durability. Suitable for bulk retail programs.",
+            "Soft, breathable baby swaddles designed to keep newborns cozy and secure. Crafted from gentle, skin-friendly fabrics, these swaddles are ideal for baby boutiques, hospital gift shops, and online retailers seeking essential newborn care products.",
           fabric: "Cotton Jersey",
           sizes: "6–24M",
           moq: "80 sets",
@@ -969,7 +1023,7 @@ const catalog = {
         {
           slug: "rompers",
           name: "Rompers",
-          image: "assets/img/products/rompers.jpg",
+          image: "images/rompers.webp",
           shortDesc:
             "All-in-one rompers for newborn and infant wear.",
           description:
@@ -981,11 +1035,11 @@ const catalog = {
         {
           slug: "Wipes",
           name: "Wipes",
-          image: "assets/img/products/bath-towel.jpg",
+          image: "images/",
           shortDesc:
-            "Soft hooded bath towels for newborn care.",
+            "Gentle, skin-safe wipes designed for everyday baby care and hygiene.",
           description:
-            "Highly absorbent baby towels crafted for gentle drying and warmth post-bath.",
+            "Gentle, skin-safe wipes designed for everyday baby care and hygiene. Made from soft, non-irritating materials, these wipes are ideal for baby stores, hospital gift shops, and online retailers seeking reliable, essential newborn care products.",
           fabric: "Terry Cotton",
           sizes: "Universal",
           moq: "120 pieces",
@@ -993,11 +1047,11 @@ const catalog = {
         {
           slug: "Short Set",
           name: "Short Set",
-          image: "assets/img/products/bath-towel.jpg",
+          image: "images/",
           shortDesc:
-            "Soft hooded bath towels for newborn care.",
+            "Comfortable coordinated short sets designed for relaxed, everyday wear.",
           description:
-            "Highly absorbent baby towels crafted for gentle drying and warmth post-bath.",
+            "Comfortable coordinated short sets designed for relaxed, everyday wear. Crafted from soft, breathable fabrics, these sets are ideal for fashion boutiques and online retailers seeking easy-to-sell women’s casual and loungewear collections.",
           fabric: "Terry Cotton",
           sizes: "Universal",
           moq: "120 pieces",
@@ -1005,11 +1059,11 @@ const catalog = {
         {
           slug: "Frock",
           name: "Frock",
-          image: "assets/img/products/bath-towel.jpg",
+          image: "images/frock.webp",
           shortDesc:
-            "Soft hooded bath towels for newborn care.",
+            "Comfortable and stylish frocks designed for everyday wear and special occasions.",
           description:
-            "Highly absorbent baby towels crafted for gentle drying and warmth post-bath.",
+            "Comfortable and stylish frocks designed for everyday wear and special occasions. Crafted from soft, breathable fabrics, these frocks are ideal for fashion boutiques and online retailers seeking versatile women’s and kidswear dresses.",
           fabric: "Terry Cotton",
           sizes: "Universal",
           moq: "120 pieces",
@@ -1017,11 +1071,11 @@ const catalog = {
         {
           slug: "onesies",
           name: "One Sies",
-          image: "assets/img/products/bath-towel.jpg",
+          image: "images/",
           shortDesc:
-            "Soft hooded bath towels for newborn care.",
+            "Soft, comfortable baby onesies designed for easy dressing and all-day wear.",
           description:
-            "Highly absorbent baby towels crafted for gentle drying and warmth post-bath.",
+            "Soft, comfortable baby onesies designed for easy dressing and all-day wear. Crafted from gentle, breathable fabrics, these onesies are ideal for baby boutiques, hospital gift shops, and online retailers seeking essential newborn and infant apparel.",
           fabric: "Terry Cotton",
           sizes: "Universal",
           moq: "120 pieces",
@@ -1029,11 +1083,11 @@ const catalog = {
         {
           slug: "Caps",
           name: "Caps",
-          image: "assets/img/products/bath-towel.jpg",
+          image: "images/caps.webp",
           shortDesc:
-            "Soft hooded bath towels for newborn care.",
+            "Lightweight, breathable baby caps crafted from soft muslin fabric for gentle everyday protection.",
           description:
-            "Highly absorbent baby towels crafted for gentle drying and warmth post-bath.",
+            "Lightweight, breathable baby caps crafted from soft muslin fabric for gentle everyday protection. Ideal for newborn comfort, these caps are perfect for baby boutiques, hospital gift shops, and online retailers seeking skin-friendly infant essentials.",
           fabric: "Terry Cotton",
           sizes: "Universal",
           moq: "120 pieces",
@@ -1041,11 +1095,11 @@ const catalog = {
         {
           slug: "Mitten & Botty Set",
           name: "Mitten & Botty Set",
-          image: "assets/img/products/bath-towel.jpg",
+          image: "images/mitten and booty.jpg",
           shortDesc:
-            "Soft hooded bath towels for newborn care.",
+            "Soft mitten and bootie sets designed to keep newborn hands and feet warm and protected.",
           description:
-            "Highly absorbent baby towels crafted for gentle drying and warmth post-bath.",
+            "Soft mitten and bootie sets designed to keep newborn hands and feet warm and protected. Crafted from gentle, breathable fabrics, these sets are ideal for baby boutiques, hospital gift shops, and online retailers seeking essential newborn accessories.",
           fabric: "Terry Cotton",
           sizes: "Universal",
           moq: "120 pieces",
@@ -1053,11 +1107,11 @@ const catalog = {
         {
           slug: "Bath Towels",
           name: "Bath Towels",
-          image: "assets/img/products/bath-towel.jpg",
+          image: "images/",
           shortDesc:
-            "Soft hooded bath towels for newborn care.",
+            "Soft, absorbent bath towels designed for gentle everyday use.",
           description:
-            "Highly absorbent baby towels crafted for gentle drying and warmth post-bath.",
+            "Soft, absorbent bath towels designed for gentle everyday use. Crafted from skin-friendly, breathable fabrics, these towels are ideal for baby boutiques, home stores, and online retailers seeking essential bath and care products.",
           fabric: "Terry Cotton",
           sizes: "Universal",
           moq: "120 pieces",
@@ -1065,11 +1119,11 @@ const catalog = {
         {
           slug: "Jabla",
           name: "Jabla",
-          image: "assets/img/products/bath-towel.jpg",
+          image: "images/jabla.webp",
           shortDesc:
-            "Soft hooded bath towels for newborn care.",
+            "Soft, breathable baby jablas designed for easy dressing and all-day comfort.",
           description:
-            "Highly absorbent baby towels crafted for gentle drying and warmth post-bath.",
+            "Soft, breathable baby jablas designed for easy dressing and all-day comfort. Crafted from gentle, skin-friendly fabrics, these jablas are ideal for baby boutiques, hospital gift shops, and online retailers seeking essential newborn clothing",
           fabric: "Terry Cotton",
           sizes: "Universal",
           moq: "120 pieces",
@@ -1079,14 +1133,14 @@ const catalog = {
   mens: {
     slug: "mens",
     title: "Men’s Wear",
-    image: "assets/img/collections/mens.jpg",
+    image: "images/men shirt.jpg",
     description:
       "Structured yet easy menswear for standalone retail, corporate programs and lounge capsules.",
     products: [
       {
         slug: "shirt",
         name: "Shirt",
-        image: "assets/img/products/oxford-shirt.jpg",
+        image: "images/men shirt.jpg",
         shortDesc:
           "Classic oxford shirt calibrated for both retail and uniform rollouts.",
         description:
@@ -1098,7 +1152,7 @@ const catalog = {
       {
         slug: "Pant",
         name: "Pant",
-        image: "assets/img/products/cotton-trouser.jpg",
+        image: "images/pant.jpg",
         shortDesc:
           "Tailored cotton trousers with subtle stretch and durable seams.",
         description:
@@ -1110,11 +1164,11 @@ const catalog = {
       {
         slug: "Lounge Wear",
         name: "Lounge Wear",
-        image: "assets/img/products/oxford-shirt.jpg",
+        image: "images/mens lounge wear.jpg",
         shortDesc:
-          "Classic oxford shirt calibrated for both retail and uniform rollouts.",
+          "Comfortable men’s loungewear designed for relaxed, everyday living.",
         description:
-          "A timeless oxford shirt with sharp collar, clean front and balanced length. Designed for wholesale buyers managing menswear floors, corporate accounts and institutional shirt programs.",
+          "Comfortable men’s loungewear designed for relaxed, everyday living. Crafted from soft, breathable fabrics, these styles are ideal for fashion boutiques and online retailers seeking easy-selling men’s casual and home wear essentials.",
         fabric: "100% Cotton Oxford",
         sizes: "38–46",
         moq: "80 pieces per colour",
@@ -1122,11 +1176,11 @@ const catalog = {
       {
         slug: "T-shirt",
         name: "T - Shirt",
-        image: "assets/img/products/oxford-shirt.jpg",
+        image: "images/",
         shortDesc:
-          "Classic oxford shirt calibrated for both retail and uniform rollouts.",
+          "Versatile T-shirts designed for everyday comfort and effortless styling.",
         description:
-          "A timeless oxford shirt with sharp collar, clean front and balanced length. Designed for wholesale buyers managing menswear floors, corporate accounts and institutional shirt programs.",
+          "Versatile T-shirts designed for everyday comfort and effortless styling. Made from soft, breathable fabrics, these essentials are ideal for fashion boutiques and online retailers seeking reliable, easy-to-sell casual wear.",
         fabric: "100% Cotton Oxford",
         sizes: "38–46",
         moq: "80 pieces per colour",
@@ -1136,7 +1190,7 @@ const catalog = {
   uniforms: {
     slug: "uniforms",
     title: "Uniforms",
-    image: "assets/img/collections/uniforms.jpg",
+    image: "images/school uniform.png",
     description:
       "Corporate, admin, school and security uniforms designed for consistency and daily wear.",
     products: [
@@ -1155,7 +1209,7 @@ const catalog = {
       {
         slug: "school-uniform",
         name: "School Uniform",
-        image: "assets/img/products/school-uniform-set.jpg",
+        image: "images/school uniform.png",
         shortDesc:
           "Durable school shirt and trouser/skirt sets for institutional supply.",
         description:
@@ -1167,11 +1221,11 @@ const catalog = {
       {
         slug: "Admin-uniform",
         name: "Admin Uniform",
-        image: "assets/img/products/school-uniform-set.jpg",
+        image: "images/admin uniform.jpg",
         shortDesc:
-          "Durable school shirt and trouser/skirt sets for institutional supply.",
+          "Smart, functional admin uniforms designed for all-day comfort and a polished workplace appearance",
         description:
-          "Hard-wearing school uniform sets engineered for frequent washing and year‑round use. Ideal for distributors and institutions seeking reliable, repeatable uniform manufacturing partners.",
+          "Smart, functional admin uniforms designed for all-day comfort and a polished workplace appearance. Crafted from durable, breathable fabrics, these uniforms are ideal for offices, institutions, and retailers supplying professional workwear solutions.",
         fabric: "Poly-Viscose Blend",
         sizes: "24–34",
         moq: "150 sets per school",
@@ -1179,11 +1233,11 @@ const catalog = {
       {
         slug: "Security-uniform",
         name: "Security Uniform",
-        image: "assets/img/products/school-uniform-set.jpg",
+        image: "images/secuirty uniform.jpg",
         shortDesc:
-          "Durable school shirt and trouser/skirt sets for institutional supply.",
+          "Durable, professional security uniforms designed for comfort, mobility, and long working hours.",
         description:
-          "Hard-wearing school uniform sets engineered for frequent washing and year‑round use. Ideal for distributors and institutions seeking reliable, repeatable uniform manufacturing partners.",
+          "Durable, professional security uniforms designed for comfort, mobility, and long working hours. Crafted from breathable, hard-wearing fabrics, these uniforms are ideal for institutions, corporate facilities, and retailers supplying reliable workwear solutions.",
         fabric: "Poly-Viscose Blend",
         sizes: "24–34",
         moq: "150 sets per school",
@@ -1193,7 +1247,7 @@ const catalog = {
   hospital: {
     slug: "hospital",
     title: "Hospital Uniforms",
-    image: "assets/img/collections/hospital.jpg",
+    image: "images/scrub suit.jpg",
     description:
       "Hospital and clinical uniforms that balance hygiene, practicality and wearer comfort.",
     products: [
@@ -1214,9 +1268,9 @@ const catalog = {
         name: "Delivery Gowns",
         image: "assets/img/products/scrub-suit.jpg",
         shortDesc:
-          "Lightweight scrub suit with functional pockets for medical staff.",
+          "Comfortable, hygienic delivery gowns designed for ease of movement during labor and postpartum care.",
         description:
-          "A classic scrub suit with V-neck top and straight trouser, equipped with functional pockets and easy-care fabric. Built for clinics, hospitals and healthcare distributors operating at volume.",
+          "Comfortable, hygienic delivery gowns designed for ease of movement during labor and postpartum care. Crafted from soft, breathable fabrics, these gowns are ideal for hospitals, maternity clinics, and retailers supplying essential maternal healthcare apparel.",
         fabric: "Poly-Cotton Blend",
         sizes: "XS–XXL",
         moq: "80 sets per colour",
@@ -1236,11 +1290,11 @@ const catalog = {
       {
         slug: "OT Scrubs",
         name: "OT Scrubs",
-        image: "assets/img/products/scrub-suit.jpg",
+        image: "images/ot scrub suit.jpg",
         shortDesc:
-          "Lightweight scrub suit with functional pockets for medical staff.",
+          "Professional operation theatre scrubs designed for hygiene, comfort, and long clinical shifts.",
         description:
-          "A classic scrub suit with V-neck top and straight trouser, equipped with functional pockets and easy-care fabric. Built for clinics, hospitals and healthcare distributors operating at volume.",
+          "Professional operation theatre scrubs designed for hygiene, comfort, and long clinical shifts. Crafted from breathable, easy-care fabrics, these scrubs are ideal for hospitals, clinics, and retailers supplying reliable medical workwear.",
         fabric: "Poly-Cotton Blend",
         sizes: "XS–XXL",
         moq: "80 sets per colour",
