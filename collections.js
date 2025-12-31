@@ -45,7 +45,7 @@ const wholesaleCollections = {
     id: "womens",
     title: "Women’s Wear",
     description:
-      "A complete women’s wear portfolio—from feeding kurtas and maternity dresses to festive sets, co-ords, and intimate wear designed for modern retail.",
+      "",
     categories: [
       { name: "Feeding Kurta" },
       { name: "Maternity Dress" },
@@ -72,7 +72,7 @@ const wholesaleCollections = {
     id: "lounge",
     title: "Lounge Wear",
     description:
-      "Soft, comfort-first loungewear built for at-home use, maternity comfort, and resort capsules.",
+      "",
     categories: [
       { name: "Pyjama Sets" },
       { name: "Zipless Feeding Gowns" },
@@ -84,7 +84,7 @@ const wholesaleCollections = {
     id: "kids",
     title: "Kids Wear",
     description:
-      "Essentials and fashion-forward kids wear across newborn, toddler, and early years with parent‑approved fabrics.",
+      "",
     categories: [
       { name: "Nappy" },
       { name: "Swaddles" },
@@ -103,7 +103,7 @@ const wholesaleCollections = {
     id: "mens",
     title: "Men’s Wear",
     description:
-      "Menswear that balances structure and comfort—ideal for both standalone retail and coordinated uniform programs.",
+      "",
     categories: [
       { name: "Pants" },
       { name: "Shirts" },
@@ -115,7 +115,7 @@ const wholesaleCollections = {
     id: "uniforms",
     title: "Uniforms",
     description:
-      "Corporate, admin, school, and security uniforms engineered for long-wear performance and institutional supply.",
+      "",
     categories: [
       { name: "Corporate Uniform" },
       { name: "Admin Uniform" },
@@ -127,7 +127,7 @@ const wholesaleCollections = {
     id: "hospital",
     title: "Hospital Uniforms",
     description:
-      "Hospital and clinical uniforms with a focus on hygiene, comfort, and practical detailing for medical teams.",
+      "",
     categories: [
       { name: "Patient Gown (Unisex)" },
       { name: "Delivery Gowns" },

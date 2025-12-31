@@ -833,7 +833,7 @@ const catalog = {
     title: "Women’s Wear",
     image: "images/kurti set.jpg",
     description:
-      "Wholesale women’s wear including feeding kurtas, maternity dresses and coordinated sets, tailored for modern retail and bulk sourcing.",
+      "",
     products: [
       {
         slug: "feeding-kurta",
@@ -842,8 +842,8 @@ const catalog = {
         shortDesc: "Comfort-first feeding kurta for everyday maternity wear in retail and hospital settings.",
         description:
           "A soft, breathable feeding kurta engineered for pregnancy, nursing and postpartum comfort. Crafted in cotton / bamboo-rich fabrics, it is ideal for maternity boutiques, hospital gift shops and online retailers seeking reliable, repeatable wholesale maternity options.",
-        fabric: "Cotton / Bamboo",
-        sizes: "S–XXL",
+        fabric: "Crafted from high-quality cotton and cotton blends, available in basic, mid-premium, and premium fabric options to suit different retail needs.",
+        sizes: "XS–XXXL",
         moq: "50 pieces",
       },
       {
@@ -854,8 +854,8 @@ const catalog = {
           "Soft, breathable maternity dress for pregnancy and postpartum wardrobes.",
         description:
           "A flowy maternity dress with gentle stretch and thoughtful patterning to accommodate the bump across trimesters. Designed for wholesale buyers looking for premium maternity silhouettes that photograph well and deliver repeat sales on the shop floor.",
-        fabric: "Bamboo Cotton",
-        sizes: "S–XXL",
+        fabric: "Crafted from high-quality cotton and cotton blends, available in basic, mid-premium, and premium fabric options to suit different retail needs.",
+        sizes: "XS–XXXL",
         moq: "50 pieces",
       },
       {
@@ -866,8 +866,8 @@ const catalog = {
           "Coordinated mother-son and mother-daughter outfits designed for everyday comfort and special moments.",
         description:
           "Coordinated mother-son and mother-daughter outfits designed for everyday comfort and special moments. Crafted in soft, breathable fabrics, these twinning sets are perfect for maternity boutiques, kidswear stores, and online retailers offering stylish, family-matching apparel.",
-        fabric: "Bamboo Cotton",
-        sizes: "S–XXL",
+        fabric: "Crafted from high-quality cotton and cotton blends, available in basic, mid-premium, and premium fabric options to suit different retail needs.",
+        sizes: "XS–XXXL",
         moq: "50 pieces",
       },
       {
@@ -878,8 +878,8 @@ const catalog = {
           "Versatile women’s tunic tops designed for all-day comfort and effortless styling.",
         description:
           "Versatile women’s tunic tops designed for all-day comfort and effortless styling. Made from soft, breathable fabrics, these tunics are ideal for fashion boutiques and online retailers seeking easy-to-sell, contemporary women’s wear.",
-        fabric: "Bamboo Cotton",
-        sizes: "S–XXL",
+        fabric: "Manufactured using quality cotton and cotton-blend fabrics, available in basic, mid-premium, and premium fabric options based on quantity and retail requirements.",
+        sizes: "XS–XXXL",
         moq: "50 pieces",
       },
       {
@@ -890,8 +890,8 @@ const catalog = {
           "Stylish coordinated sets designed for effortless, head-to-toe dressing.",
         description:
           "Stylish coordinated sets designed for effortless, head-to-toe dressing. Crafted from comfortable, breathable fabrics, these co-ord sets are ideal for fashion boutiques and online retailers seeking trend-driven, ready-to-wear women’s apparel.",
-        fabric: "Bamboo Cotton",
-        sizes: "S–XXL",
+        fabric: "Crafted from breathable cottons and soft cotton-blend fabrics with fluid drape, offered in basic, mid-premium, and premium fabric options.",
+        sizes: "XS–XXXL",
         moq: "50 pieces",
       },
       {
@@ -902,8 +902,8 @@ const catalog = {
           "Elegant women’s suit sets featuring coordinated kurta, bottoms, and dupatta for effortless ethnic styling.",
         description:
           "Elegant women’s suit sets featuring coordinated kurta, bottoms, and dupatta for effortless ethnic styling. Crafted in comfortable, breathable fabrics, these sets are ideal for fashion boutiques and online retailers seeking timeless, easy-to-sell ethnic wear.",
-        fabric: "Bamboo Cotton",
-        sizes: "S–XXL",
+        fabric: "Crafted from high-quality cotton, cotton blends, and select ethnic fabrics, available in basic, mid-premium, and premium fabric options to suit different retail needs.",
+        sizes: "XS–XXXL",
         moq: "50 pieces",
       },
       {
@@ -914,8 +914,8 @@ const catalog = {
           "Graceful festive outfits designed for celebrations, weddings, and special occasions. ",
         description:
           "Graceful festive outfits designed for celebrations, weddings, and special occasions. Crafted in rich yet comfortable fabrics, these styles are ideal for fashion boutiques and online retailers seeking elegant, occasion-ready ethnic wear.",
-        fabric: "Bamboo Cotton",
-        sizes: "S–XXL",
+        fabric: "Crafted from rich ethnic fabrics, silk blends, Chanderi blends, jacquards, and premium festive materials, available in mid-premium and premium fabric options.",
+        sizes: "XS–XXXL",
         moq: "50 pieces",
       },
       {
@@ -926,8 +926,8 @@ const catalog = {
           "Flowing kaftans designed for relaxed elegance and all-day comfort.",
         description:
           "Flowing kaftans designed for relaxed elegance and all-day comfort. Crafted from soft, breathable fabrics, these kaftans are ideal for fashion boutiques and online retailers seeking versatile, easy-fit women’s wear for casual and resort styling.",
-        fabric: "Bamboo Cotton",
-        sizes: "S–XXL",
+        fabric: "Crafted from lightweight cottons, bamboo blends, rayon blends, muslin, crepe, and other flowy fabrics, available in basic, mid-premium, and premium fabric options.",
+        sizes: "XS–XXXL",
         moq: "50 pieces",
       },
     ],
@@ -937,7 +937,7 @@ const catalog = {
     title: "Lounge Wear",
     image: "images/Long t shirt.webp",
     description:
-      "Loungewear built around softness, ease and all-day comfort for resort, home and maternity capsules.",
+      "",
     products: [
       {
         slug: "pyjama-sets",
@@ -947,8 +947,8 @@ const catalog = {
           "Two-piece cotton pyjama sets designed for relaxed at-home and resort wear.",
         description:
           "Lightweight cotton pyjama sets with relaxed fits and soft washes, created to sit in sleepwear, resort and gifting capsules. Ideal for retailers seeking consistent sizing, colour stories and long-run wholesale loungewear programs.",
-        fabric: "Woven Cotton",
-        sizes: "S–XXL",
+        fabric: "Crafted from soft cottons, cotton blends, bamboo blends, modal blends, and breathable women’s comfort fabrics, available in basic, mid-premium, and premium fabric options",
+        sizes: "XS–XXXL",
         moq: "60 sets",
       },
       {
@@ -959,7 +959,7 @@ const catalog = {
           "Zip-free feeding gown with concealed access for nursing comfort.",
         description:
           "A bamboo-blend lounge gown featuring discreet nursing access without bulky zips. Built for maternity-focused retailers and hospital suppliers looking for premium yet practical postnatal loungewear in bulk.",
-        fabric: "Bamboo Cotton Jersey",
+        fabric: "Crafted from skin-safe cottons, bamboo blends, and gentle stretch-comfort fabrics designed for nursing ease, available in basic, mid-premium, and premium fabric options.",
         sizes: "S–XL",
         moq: "50 pieces",
       },
@@ -971,8 +971,8 @@ const catalog = {
           "Ultra-soft maternity leggings designed to gently support the baby bump through pregnancy and postpartum.",
         description:
           "Ultra-soft maternity leggings designed to gently support the baby bump through pregnancy and postpartum. Crafted from stretchable, breathable fabrics for all-day comfort, ideal for maternity boutiques and online retailers seeking high-repeat, essential maternity wear.",
-        fabric: "Woven Cotton",
-        sizes: "S–XXL",
+        fabric: "Crafted from ultra-soft stretch cotton, cotton elastane blends, modal blends, and high-recovery comfort fabrics designed for bump support and flexibility, available in mid-premium and premium fabric options.",
+        sizes: "XS–XXXL",
         moq: "60 sets",
       },
       {
@@ -983,8 +983,8 @@ const catalog = {
           "Comfortable long-length T-shirts designed for easy everyday wear and relaxed layering.",
         description:
           "Comfortable long-length T-shirts designed for easy everyday wear and relaxed layering. Made from soft, breathable fabrics, these styles are ideal for fashion boutiques and online retailers seeking versatile, easy-fit women’s casual wear.",
-        fabric: "Woven Cotton",
-        sizes: "S–XXL",
+        fabric: "Crafted from soft cotton knits, cotton elastane blends, and breathable jersey fabrics designed for comfort and everyday wear",
+        sizes: "XS–XXXL",
         moq: "60 sets",
       },
     ],
@@ -994,7 +994,7 @@ const catalog = {
     title: "Kids Wear",
     image: "images/kid dress.webp",
     description:
-      "Newborn and kids wear with safety-first trims and soft fabrics for bulk baby and kids collections.",
+      "",
     products: [
         {
           slug: "nappy",
@@ -1004,7 +1004,7 @@ const catalog = {
             "Soft reusable nappies designed for newborn comfort.",
           description:
             "Baby nappies developed with skin-friendly fabrics for extended wear. Suitable for hospital kits and baby care brands.",
-          fabric: "Cotton Terry",
+          fabric: "Crafted using premium muslin cotton and highly absorbent inner layers with breathable construction",
           sizes: "Newborn",
           moq: "150 pieces",
         },
@@ -1016,7 +1016,7 @@ const catalog = {
             "Soft, breathable baby swaddles designed to keep newborns cozy and secure.",
           description:
             "Soft, breathable baby swaddles designed to keep newborns cozy and secure. Crafted from gentle, skin-friendly fabrics, these swaddles are ideal for baby boutiques, hospital gift shops, and online retailers seeking essential newborn care products.",
-          fabric: "Cotton Jersey",
+          fabric: "Crafted from ultra-soft muslin cotton, lightweight cotton voile, and breathable baby-safe fabrics designed for gentle wrapping and all-day comfort",
           sizes: "6–24M",
           moq: "80 sets",
         },
@@ -1028,7 +1028,7 @@ const catalog = {
             "All-in-one rompers for newborn and infant wear.",
           description:
             "Comfortable rompers designed for easy dressing and movement. Ideal for baby boutiques and gifting collections.",
-          fabric: "Organic Cotton",
+          fabric: "Crafted from ultra-soft cotton knits, interlock cotton, cotton elastane blends, and breathable baby-safe fabrics designed for comfort and ease of movement",
           sizes: "0–12M",
           moq: "100 pieces",
         },
@@ -1040,7 +1040,7 @@ const catalog = {
             "Gentle, skin-safe wipes designed for everyday baby care and hygiene.",
           description:
             "Gentle, skin-safe wipes designed for everyday baby care and hygiene. Made from soft, non-irritating materials, these wipes are ideal for baby stores, hospital gift shops, and online retailers seeking reliable, essential newborn care products.",
-          fabric: "Terry Cotton",
+          fabric: "Crafted from ultra-soft non-woven fabrics, plant-based fibers, and skin-safe absorbent materials designed for gentle cleansing and everyday hygiene",
           sizes: "Universal",
           moq: "120 pieces",
         },
@@ -1052,7 +1052,7 @@ const catalog = {
             "Comfortable coordinated short sets designed for relaxed, everyday wear.",
           description:
             "Comfortable coordinated short sets designed for relaxed, everyday wear. Crafted from soft, breathable fabrics, these sets are ideal for fashion boutiques and online retailers seeking easy-to-sell women’s casual and loungewear collections.",
-          fabric: "Terry Cotton",
+          fabric: "Crafted from breathable cotton knits, soft cotton blends, jersey fabrics, and lightweight comfort materials",
           sizes: "Universal",
           moq: "120 pieces",
         },
@@ -1064,7 +1064,7 @@ const catalog = {
             "Comfortable and stylish frocks designed for everyday wear and special occasions.",
           description:
             "Comfortable and stylish frocks designed for everyday wear and special occasions. Crafted from soft, breathable fabrics, these frocks are ideal for fashion boutiques and online retailers seeking versatile women’s and kidswear dresses.",
-          fabric: "Terry Cotton",
+          fabric: "Crafted from breathable cottons, cotton blends, poplin, cambric, and soft woven fabrics designed",
           sizes: "Universal",
           moq: "120 pieces",
         },
@@ -1076,31 +1076,19 @@ const catalog = {
             "Soft, comfortable baby onesies designed for easy dressing and all-day wear.",
           description:
             "Soft, comfortable baby onesies designed for easy dressing and all-day wear. Crafted from gentle, breathable fabrics, these onesies are ideal for baby boutiques, hospital gift shops, and online retailers seeking essential newborn and infant apparel.",
-          fabric: "Terry Cotton",
+          fabric: "Crafted from ultra-soft cotton knits, interlock cotton, ribbed cotton, and gentle cotton elastane blends",
           sizes: "Universal",
           moq: "120 pieces",
         },
         {
-          slug: "Caps",
-          name: "Caps",
-          image: "images/caps.webp",
-          shortDesc:
-            "Lightweight, breathable baby caps crafted from soft muslin fabric for gentle everyday protection.",
-          description:
-            "Lightweight, breathable baby caps crafted from soft muslin fabric for gentle everyday protection. Ideal for newborn comfort, these caps are perfect for baby boutiques, hospital gift shops, and online retailers seeking skin-friendly infant essentials.",
-          fabric: "Terry Cotton",
-          sizes: "Universal",
-          moq: "120 pieces",
-        },
-        {
-          slug: "Mitten & Botty Set",
+          slug: "Cap Mitten & Botty Set",
           name: "Mitten & Botty Set",
           image: "images/mitten and booty.jpg",
           shortDesc:
             "Soft mitten and bootie sets designed to keep newborn hands and feet warm and protected.",
           description:
             "Soft mitten and bootie sets designed to keep newborn hands and feet warm and protected. Crafted from gentle, breathable fabrics, these sets are ideal for baby boutiques, hospital gift shops, and online retailers seeking essential newborn accessories.",
-          fabric: "Terry Cotton",
+          fabric: "Crafted from ultra-soft cotton knits, interlock cotton, ribbed cotton, and gentle cotton blends",
           sizes: "Universal",
           moq: "120 pieces",
         },
@@ -1112,7 +1100,7 @@ const catalog = {
             "Soft, absorbent bath towels designed for gentle everyday use.",
           description:
             "Soft, absorbent bath towels designed for gentle everyday use. Crafted from skin-friendly, breathable fabrics, these towels are ideal for baby boutiques, home stores, and online retailers seeking essential bath and care products.",
-          fabric: "Terry Cotton",
+          fabric: "Crafted from highly absorbent cotton terry, soft cotton loops, and premium towel-grade fabrics",
           sizes: "Universal",
           moq: "120 pieces",
         },
@@ -1124,7 +1112,7 @@ const catalog = {
             "Soft, breathable baby jablas designed for easy dressing and all-day comfort.",
           description:
             "Soft, breathable baby jablas designed for easy dressing and all-day comfort. Crafted from gentle, skin-friendly fabrics, these jablas are ideal for baby boutiques, hospital gift shops, and online retailers seeking essential newborn clothing",
-          fabric: "Terry Cotton",
+          fabric: "Crafted from ultra-soft cotton knits, interlock cotton, ribbed cotton, and lightweight baby-safe fabrics",
           sizes: "Universal",
           moq: "120 pieces",
         }
@@ -1135,7 +1123,7 @@ const catalog = {
     title: "Men’s Wear",
     image: "images/men shirt.jpg",
     description:
-      "Structured yet easy menswear for standalone retail, corporate programs and lounge capsules.",
+      "",
     products: [
       {
         slug: "shirt",
@@ -1145,7 +1133,7 @@ const catalog = {
           "Classic oxford shirt calibrated for both retail and uniform rollouts.",
         description:
           "A timeless oxford shirt with sharp collar, clean front and balanced length. Designed for wholesale buyers managing menswear floors, corporate accounts and institutional shirt programs.",
-        fabric: "100% Cotton Oxford",
+        fabric: "Crafted from premium woven cottons, cotton blends, poplin, twill, oxford, and shirting-grade fabrics",
         sizes: "38–46",
         moq: "80 pieces per colour",
       },
@@ -1157,7 +1145,7 @@ const catalog = {
           "Tailored cotton trousers with subtle stretch and durable seams.",
         description:
           "Versatile cotton trousers with a modern straight fit and reinforced seams, suitable for both retail cabinets and corporate uniform deployments.",
-        fabric: "Cotton-Rich Twill with Stretch",
+        fabric: "Crafted from durable woven cottons, cotton twills, cotton blends, linen blends, and pant-grade fabrics",
         sizes: "30–38",
         moq: "80 pieces per colour",
       },
@@ -1169,7 +1157,7 @@ const catalog = {
           "Comfortable men’s loungewear designed for relaxed, everyday living.",
         description:
           "Comfortable men’s loungewear designed for relaxed, everyday living. Crafted from soft, breathable fabrics, these styles are ideal for fashion boutiques and online retailers seeking easy-selling men’s casual and home wear essentials.",
-        fabric: "100% Cotton Oxford",
+        fabric: "Crafted from soft cotton knits, cotton blends, jersey fabrics, and breathable comfort materials",
         sizes: "38–46",
         moq: "80 pieces per colour",
       },
@@ -1181,18 +1169,106 @@ const catalog = {
           "Versatile T-shirts designed for everyday comfort and effortless styling.",
         description:
           "Versatile T-shirts designed for everyday comfort and effortless styling. Made from soft, breathable fabrics, these essentials are ideal for fashion boutiques and online retailers seeking reliable, easy-to-sell casual wear.",
-        fabric: "100% Cotton Oxford",
+        fabric: "Crafted from soft cotton knits, cotton blends, jersey fabrics, and breathable comfort materials",
         sizes: "38–46",
         moq: "80 pieces per colour",
       },
     ],
   },
+  intimates: {
+    slug: "intimates",
+    title: "Women’s Intimate Wear",
+    image: "images/intimates-cover.jpg",
+    description:
+      "",
+    products: [
+      {
+        slug: "feeding-bra",
+        name: "Feeding Bra",
+        image: "images/feeding-bra.jpg",
+        shortDesc:
+          "Wire-free feeding bras designed for nursing comfort and everyday support.",
+        description:
+          "Comfort-first feeding bras crafted for pregnancy, nursing, and postpartum use. Designed with easy nursing access and gentle support, these bras are ideal for maternity boutiques, hospital stores, and online retailers seeking reliable intimate essentials.",
+        fabric:
+          "Soft cotton and cotton-blend fabrics with breathable, skin-friendly finishes.",
+        sizes: "32–40",
+        moq: "50 pieces",
+      },
+      {
+        slug: "maternity-innerwear",
+        name: "Maternity Innerwear",
+        image: "images/maternity-innerwear.jpg",
+        shortDesc:
+          "Everyday maternity innerwear designed for comfort through all stages of pregnancy.",
+        description:
+          "Maternity innerwear designed to adapt to a changing body during pregnancy and postpartum. Featuring soft waistbands and breathable fabrics, these essentials are ideal for retailers offering practical, high-repeat maternity products.",
+        fabric:
+          "Breathable cotton and cotton blends with soft elasticated finishes.",
+        sizes: "S–XXL",
+        moq: "50 pieces",
+      },
+      {
+        slug: "cotton-bralette",
+        name: "Cotton Bralette",
+        image: "images/cotton-bralette.jpg",
+        shortDesc:
+          "Lightweight cotton bralettes inspired by indie comfort and everyday wear.",
+        description:
+          "Minimal, wire-free cotton bralettes designed for relaxed, all-day comfort. These indie-inspired styles are ideal for boutiques and online retailers focusing on breathable, easy-fit intimate wear for modern women.",
+        fabric:
+          "Soft, breathable cotton with pre-washed finishes.",
+        sizes: "S–XL",
+        moq: "50 pieces",
+      },
+      {
+        slug: "cotton-panties",
+        name: "Cotton Panties",
+        image: "images/cotton-panties.jpg",
+        shortDesc:
+          "Comfort-focused cotton panties designed for everyday use.",
+        description:
+          "Everyday cotton panties designed with a focus on breathability, comfort, and fit. Ideal for intimate wear retailers looking for essential styles with consistent repeat demand.",
+        fabric:
+          "100% breathable cotton with skin-safe finishes.",
+        sizes: "S–XXL",
+        moq: "50 pieces",
+      },
+      {
+        slug: "sleep-lounge-innerwear",
+        name: "Sleep & Lounge Innerwear",
+        image: "images/lounge-innerwear.jpg",
+        shortDesc:
+          "Soft innerwear sets designed for relaxed sleep and lounge comfort.",
+        description:
+          "Comfort-led innerwear sets designed for sleeping and lounging. Crafted from soft, breathable fabrics, these styles are ideal for boutiques and online retailers offering relaxed, lifestyle-focused intimate wear.",
+        fabric:
+          "Cotton and bamboo-blend fabrics with breathable finishes.",
+        sizes: "S–XXL",
+        moq: "50 pieces",
+      },
+      {
+        slug: "postpartum-innerwear",
+        name: "Postpartum Innerwear",
+        image: "images/postpartum-innerwear.jpg",
+        shortDesc:
+          "Supportive postpartum innerwear designed for recovery and comfort.",
+        description:
+          "Postpartum innerwear designed to provide gentle support and comfort after delivery. Crafted from soft, breathable fabrics, these essentials are ideal for maternity retailers and hospital-associated stores.",
+        fabric:
+          "Soft cotton and cotton-blend fabrics with stretch-friendly finishes.",
+        sizes: "S–XXL",
+        moq: "50 pieces",
+      },
+    ],
+  },
+  
   uniforms: {
     slug: "uniforms",
     title: "Uniforms",
     image: "images/school uniform.png",
     description:
-      "Corporate, admin, school and security uniforms designed for consistency and daily wear.",
+      "",
     products: [
       {
         slug: "corporate-Uniform",
@@ -1249,7 +1325,7 @@ const catalog = {
     title: "Hospital Uniforms",
     image: "images/scrub suit.jpg",
     description:
-      "Hospital and clinical uniforms that balance hygiene, practicality and wearer comfort.",
+      "",
     products: [
       {
         slug: "patient-gown",
@@ -1498,7 +1574,7 @@ if (productDetailPage) {
     }
 
     if (waLink) {
-      const phone = "919655502923"; // TODO: replace with your actual WhatsApp number
+      const phone = "918072305473"; // TODO: replace with your actual WhatsApp number
       const message = `Hello, I am interested in the following wholesale product:
 
 Product: ${product.name}

@@ -112,18 +112,21 @@ textarea {
 .btn.primary {
   background: linear-gradient(135deg, #d8b88b, #c19b6b);
   color: #221711;
-  box-shadow: 0 18px 50px rgba(159, 127, 90, 0.35);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
 }
 
 .btn.primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 22px 70px rgba(159, 127, 90, 0.45);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
 }
 
 .btn.ghost {
   background: transparent;
-  border-color: rgba(161, 132, 97, 0.5);
+  border-color: rgba(0, 0, 0, 0.5);
   color: var(--accent-strong);
+}
+.btn.ghost {
+  color: #000000; /* white text */
 }
 
 .btn.ghost:hover {
@@ -457,55 +460,140 @@ textarea {
 
 /* Collections Overview */
 
+/* ===============================
+   Collections Overview – Grid
+================================ */
+
 .collections-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 24px;
 }
 
-.card-image {
-  height: 190px;
-  background-size: cover;
-  background-position: center;
+/* Tablet */
+@media (max-width: 1024px) {
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
-.card-image--maternity {
-  background-image: url("images/Feeding\ dress.webp");
+/* Mobile */
+@media (max-width: 600px) {
+  .collections-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
-.card-image--regular {
-  background-image: url("images/kurti.webp");
-}
-
-.card-image--casual {
-  background-image: url("");
-}
-
-.card-image--ethnic {
-  background-image: url("");
-}
-
-.card-image--party {
-  background-image: url("");
-}
-
-.card-image--seasonal {
-  background-image: url("");
-}
+/* ===============================
+   Collection Card Base
+================================ */
 
 .collection-card {
   position: relative;
   overflow: hidden;
+  border-radius: 22px;
+  min-height: 360px; /* keeps card height consistent */
 }
 
+/* ===============================
+   Image Layer (Sharp)
+================================ */
+
 .collection-card .card-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
   transition: transform 0.6s ease;
 }
 
 .collection-card:hover .card-image {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
+/* ===============================
+   Bottom 50% Blur Layer
+================================ */
+
+.collection-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  /* Smooth fade into image */
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  z-index: 1;
+}
+
+/* ===============================
+   Content Layer (Above Blur)
+================================ */
+
 .collection-card .card-body {
-  position: relative;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+}
+
+/* ===============================
+   Typography
+================================ */
+
+.collection-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.collection-card p {
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* ===============================
+   CTA Link
+================================ */
+
+.collection-card .text-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+}
+
+/* ===============================
+   Optional: Premium Polish
+================================ */
+
+.collection-card .card-body {
+  transition: transform 0.3s ease;
+}
+
+.collection-card:hover .card-body {
+  transform: translateY(-2px);
 }
 
 /* Featured Products */
