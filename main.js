@@ -823,28 +823,6 @@ if (yearSpan) {
 }
 
 // --------------------------------------------------------------------
-// Lenis smooth scroll (global)
-// --------------------------------------------------------------------
-
-if (
-  typeof window !== "undefined" &&
-  typeof Lenis !== "undefined" &&
-  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-) {
-  const lenis = new Lenis({
-    lerp: 0.1,
-    smoothWheel: true,
-    smoothTouch: false,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
-}
-// --------------------------------------------------------------------
 // Cross-page master catalog (collections → products) for new flow:
 // collections.html → products.html → product-detail.html
 // --------------------------------------------------------------------
