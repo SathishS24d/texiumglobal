@@ -1544,9 +1544,14 @@ textarea:focus {
 @media (max-width: 1040px) {
   .hero-inner,
   .about-layout,
+  .brand-story-layout,
   .clients-layout,
   .enquiry-layout,
   .product-detail-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mission-vision-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -1612,6 +1617,10 @@ textarea:focus {
 
   .hero h1 {
     font-size: 32px;
+  }
+
+  .brand-story-copy h2 {
+    font-size: 24px;
   }
 
   .collections-grid,
