@@ -823,6 +823,28 @@ if (yearSpan) {
 }
 
 // --------------------------------------------------------------------
+// Lenis smooth scroll (global)
+// --------------------------------------------------------------------
+
+if (
+  typeof window !== "undefined" &&
+  typeof Lenis !== "undefined" &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  const lenis = new Lenis({
+    lerp: 0.1,
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+}
+// --------------------------------------------------------------------
 // Cross-page master catalog (collections → products) for new flow:
 // collections.html → products.html → product-detail.html
 // --------------------------------------------------------------------
@@ -831,14 +853,14 @@ const catalog = {
   womens: {
     slug: "womens",
     title: "Women’s Wear",
-    image: "images/kurti set.jpg",
+    image: "images/kurti set.png",
     description:
       "",
     products: [
       {
         slug: "feeding-kurta",
         name: "Feeding Kurta",
-        image: "images/kurti set.jpg",
+        image: "images/kurti set.png",
         shortDesc: "Comfort-first feeding kurta for everyday maternity wear in retail and hospital settings.",
         description:
           "A soft, breathable feeding kurta engineered for pregnancy, nursing and postpartum comfort. Crafted in cotton / bamboo-rich fabrics, it is ideal for maternity boutiques, hospital gift shops and online retailers seeking reliable, repeatable wholesale maternity options.",
@@ -1262,7 +1284,6 @@ const catalog = {
       },
     ],
   },
-  
   uniforms: {
     slug: "uniforms",
     title: "Uniforms",
@@ -1323,7 +1344,7 @@ const catalog = {
   hospital: {
     slug: "hospital",
     title: "Hospital Uniforms",
-    image: "images/scrub suit.jpg",
+    image: "images/scrubsuit.jpg",
     description:
       "",
     products: [
@@ -1354,7 +1375,7 @@ const catalog = {
       {
         slug: "Scrub Suit",
         name: "Scrub Suit",
-        image: "assets/img/products/scrub-suit.jpg",
+        image: "images/scrubsuit.jpg",
         shortDesc:
           "Lightweight scrub suit with functional pockets for medical staff.",
         description:
@@ -1374,6 +1395,41 @@ const catalog = {
         fabric: "Poly-Cotton Blend",
         sizes: "XS–XXL",
         moq: "80 sets per colour",
+      },
+    ],
+  },
+  Personalcare: {
+    slug: "Personalcare",
+    title: "Personal Care",
+    image: "images/intimates-cover.jpg",
+    description:
+      "",
+    products: [
+      {
+        slug: "maternity-pad",
+        name: "Maternity Pad",
+        image: "images/feeding-bra.jpg",
+        shortDesc:
+          "Soft, highly absorbent maternity pads designed for postpartum comfort and reliable protection.",
+        description:
+          "Comfort-first maternity pads created to provide gentle, dependable protection during the postpartum period. Made with skin-friendly, breathable materials, these pads offer excellent absorbency while remaining soft and irritation-free for sensitive skin. Ideal for maternity boutiques, hospital stores, and online retailers looking to offer essential postpartum care products with consistent quality and everyday usability.",
+        fabric:
+          "Bamboo/Cotton",
+        sizes: "32–40",
+        moq: "50 pieces",
+      },
+      {
+        slug: "panty-pad",
+        name: "Panty Pad",
+        image: "images/maternity-innerwear.jpg",
+        shortDesc:
+          "Thin, breathable panty pads designed for daily hygiene and all-day freshness.",
+        description:
+          "Lightweight and comfortable panty pads designed for everyday hygiene and freshness. Crafted with breathable, skin-safe materials, they provide discreet protection without bulk, ensuring comfort throughout the day. A practical, high-repeat essential for retailers catering to women’s daily care and intimate hygiene needs.",
+        fabric:
+          "Bamboo/Cotton",
+        sizes: "S–XXL",
+        moq: "50 pieces",
       },
     ],
   },
